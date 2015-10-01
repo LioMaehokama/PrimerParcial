@@ -3,7 +3,7 @@
     <label for="dni" class="sr-only">DNI</label>
     <input type="number" id="dni" class="form-control" placeholder="DNI" required="" autofocus="" min="1000000" max="99999999">
     <label for="provincia" class="sr-only">Provincia</label>
-	<select id="sexo" class="form-control">
+	<select id="provincia" class="form-control">
 		<option value = "1"> Buenos Aires </option>
 		<option value = "2"> Catamarca </option>
 		<option value = "2"> Chaco </option>
