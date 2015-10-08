@@ -11,8 +11,8 @@ class usuario
   public static function TraerTodosLosUsuarios()
   {
     $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-    // $consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario");
-    $consulta = $objetoAccesoDato->RetornarConsulta("CALL traerTodosLosUsuarios");
+    $consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM usuario");
+    //$consulta = $objetoAccesoDato->RetornarConsulta("CALL traerTodosLosUsuarios");
     $consulta->execute();           
     return $consulta->fetchAll(PDO::FETCH_CLASS, "usuario"); 
   }
@@ -25,6 +25,17 @@ class usuario
     $consulta->bindValue(':paramSexo', $sexo);
     $consulta->execute();       
     return $objetoAccesoDato->RetornarUltimoIdInsertado();
+  }
+
+  public static function TraerUsuarioxId($dni)
+  {
+    $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+    $consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM votacion WHERE dni = :dni");
+    //$consulta = $objetoAccesoDato->RetornarConsulta("CALL traerTodosLosUsuarios");
+    $consulta->bindValue(':dni', $dni, PDO::PARAM_INT);
+    $consulta->execute();           
+    $UsuarioBuscado = $consulta->fetchObject('usuario');
+    return $UsuarioBuscado;
   }
 
   public function validarusuario($usuario)

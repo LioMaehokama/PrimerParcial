@@ -2,7 +2,6 @@ function login()
 {
     var elUsuario= $("#dni").val();
     var elsexo= $("#sexo").val();
-    var laprovincia= $("#provincia").val();
 
     var funcionAjax = $.ajax({url:"php/ValidarUsuario.php", type:"post",
                         data:{
@@ -16,7 +15,7 @@ function login()
         {
             alert("sesion iniciada");
             $("#MensajeError").val("");
-            window.location.href = "menu.php";            // vamos al menu
+            //window.location.href = "menu.php";            // vamos al menu
         }
         else
         {

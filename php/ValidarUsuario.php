@@ -9,7 +9,8 @@ $usuarioValidado = usuario::InsertarUsuario($DatosLogin->usuario, $DatosLogin->s
 
 if(isset($usuarioValidado))
 {
-	$_SESSION['usuarioActual'] = $usuarioValidado->dni;
+	$usuario = usuario::TraerUsuarioxId($DatosLogin->usuario);
+	$_SESSION['usuarioActual'] = $usuario->dni;
 	echo "correcto";
 
 }else
