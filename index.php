@@ -14,13 +14,19 @@
 <link href="css/ingreso.css" rel="stylesheet">
 
 <!-- media queries css -->
- <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
- <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
- <link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
 <script type="text/javascript" src="js/funcionesABM.js"></script>
+
+<!-- geolocalizacion -->
+<script type="text/javascript" src="js/funcionesMapa.js"></script>
+<script type="text/javascript" src="js/geolocalizacionCommon.js"></script>
+<script type="text/javascript" src="js/moduloGeolocalizacion.js"></script>
 
 </head>
 
@@ -39,7 +45,7 @@
 			<ul id="main-nav" class="clearfix">
 				<li><a onclick="FormIngreso()" class="btn">Ingreso</a></li>
 				<li><a onclick="FormVotacion()" class="btn">Ir a VOTACIÓN</a> </li>
-				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>
+				<li><a onclick="FormGrilla()" class="btn">Listado de Votaciones</a> </li>
 				
 			</ul>
 			<!-- /#main-nav --> 
@@ -63,9 +69,10 @@
 			<hr>
 			<div id="principal">
 
-<?php
+				<?php
 
-?>
+				?>
+
 			</div>		
 
 		</article>

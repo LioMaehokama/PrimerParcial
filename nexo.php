@@ -13,6 +13,9 @@ switch ($queHago) {
 	case 'MostrarListado':
 			include("partes/FormListado.php");
 		break;
+	case 'VerEnMapa':
+			include("partes/formMapaGoogle.php");
+		break;
 
 	default:
 		# code...

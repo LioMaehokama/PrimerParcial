@@ -1,4 +1,4 @@
-<form class="form-ingreso " onsubmit="login();return false;">
+<form class="form-ingreso" onsubmit="login();return false;">
 	<h2 class="form-ingreso-heading">Ingrese sus datos</h2>
     <label for="dni" class="sr-only">DNI</label>
     <input type="number" id="dni" class="form-control" placeholder="DNI" required="" autofocus="" min="1000000" max="99999999">

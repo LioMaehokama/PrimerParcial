@@ -1,7 +1,6 @@
 <?php
 class usuario
 {
-
   public $dni;
   public $sexo;
   public $provincia;
@@ -38,16 +37,16 @@ class usuario
     return $UsuarioBuscado;
   }
 
-  public function validarusuario($usuario)
+  public static function ModificarUsuario($dni, $voto, $provincia, $localidad)
   {
-    /*$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-    // $consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario where dni='$usuario'");
-    $consulta = $objetoAccesoDato->RetornarConsulta("CALL validarUsuario(:dni)");
-    $consulta->bindValue(':dni', $usuario, PDO::PARAM_INT);
-    $consulta->execute(); 
-    $UsuarioBuscado = $consulta->fetchObject('usuario');
-    return $UsuarioBuscado;*/
-
+    $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+    $consulta =$objetoAccesoDato->RetornarConsulta("UPDATE votacion SET presidenciable=:voto, provincia=:provincia, localidad=:localidad WHERE dni=:dni");
+    //$consulta = $objetoAccesoDato->RetornarConsulta("CALL traerTodosLosUsuarios");
+    $consulta->bindValue(':dni', $dni, PDO::PARAM_INT);
+    $consulta->bindValue(':voto', $voto, PDO::PARAM_INT);
+    $consulta->bindValue(':provincia', $provincia, PDO::PARAM_INT);
+    $consulta->bindValue(':localidad', $localidad, PDO::PARAM_INT);
+    $consulta->execute();           
   }
    
 }
